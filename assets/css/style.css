@@ -1417,47 +1417,6 @@ p {
   color: var(--color-blue-400);
 }
 
-/* — 20. Ecossistema eGoverna — */
-.ecosystem {
-  display: grid;
-  gap: 32px;
-  justify-items: center;
-  text-align: center;
-  padding: clamp(40px, 6vw, 64px);
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--color-border-soft);
-  background: var(--color-white);
-  box-shadow: var(--shadow-sm);
-}
-
-.ecosystem__logos {
-  display: flex;
-  align-items: center;
-  gap: clamp(20px, 4vw, 36px);
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.ecosystem__logos img {
-  height: 32px;
-  width: auto;
-}
-
-.ecosystem__logos .sdi-mark {
-  height: 38px;
-}
-
-.ecosystem__plus {
-  width: 34px;
-  height: 34px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  border: 1px solid var(--color-border);
-  color: var(--color-text-muted);
-  flex: none;
-}
-
 /* — 21. CTA final — */
 .cta-final {
   position: relative;
@@ -1645,19 +1604,6 @@ p {
   padding-block: 26px;
   border-top: 1px solid rgb(255 255 255 / 0.1);
   font-size: 0.8125rem;
-}
-
-.footer__ecosystem {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.8125rem;
-}
-
-.footer__ecosystem img {
-  height: 20px;
-  width: auto;
-  opacity: 0.9;
 }
 
 /* ==========================================================================

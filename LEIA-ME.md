@@ -39,11 +39,10 @@ Coloque os arquivos em `assets/images/app/` e substitua o bloco
 
 | Tela | Situação |
 |---|---|
-| Login Gov.br | ✅ no hero e na Área do Cidadão |
-| Painel interno (dashboard) | ✅ na seção Gestão Pública |
-| Notebook com o SDI | ✅ no CTA final |
+| Escolha a instituição | ✅ no hero (screenshot real) |
+| Login Gov.br | ✅ na Área do Cidadão (screenshot real) |
+| Painel interno | ✅ na Gestão Pública e no CTA final |
 | Menu do aplicativo | ⏳ desenhado em CSS (`.app-menu`) — trocar pela screenshot |
-| Consulte seus processos | ⏳ placeholder no aparelho de trás do hero |
 
 ### 2. URLs de acesso ao sistema
 
@@ -82,7 +81,7 @@ controlador (razão social, CNPJ, endereço e contato do encarregado/DPO).
 ## Estrutura
 
 ```
-index.html                  Página principal (12 seções)
+index.html                  Página principal (10 seções)
 politica-de-privacidade.html
 termos-de-uso.html
 404.html
@@ -95,7 +94,6 @@ assets/
   js/main.js                5 módulos, sem dependências
   images/                   hero/ app/ mockups/ backgrounds/
   logos/sdi/                sdi-azul.png · sdi-branco.png · sdi-icone.png
-  logos/egoverna/           egoverna-preto.png · egoverna-branco.png
   icons/                    favicons e ícones de aplicativo
 ```
 
@@ -128,4 +126,6 @@ que contém `class="digital"` em `index.html`.
 - Sem overflow horizontal de 320px a 1920px
 - Zero dependências de framework, zero scripts externos
 - Logos otimizadas (a principal foi de 878 KB para 70 KB)
-- Mockups reais extraídos das peças institucionais, exportados em WebP (~73 KB cada)
+- Mockups reais em WebP (19 a 70 KB cada)
+- Sem menções ou logos do eGoverna: as marcas que apareciam dentro do print
+  do painel também foram substituídas
