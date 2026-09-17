@@ -819,22 +819,33 @@ p {
   }
 }
 
-/* — Composição do hero: aparelho principal + aparelho ao fundo — */
-.hero-stage__back {
+/* — Composição do hero —
+   O grupo tem exatamente a largura do aparelho, então os selos se posicionam
+   em relação a ELE, não ao palco. É o que faz o conjunto parecer uma coisa
+   só: antes os cartões eram posicionados em % de um palco de 560px e caíam
+   em alturas arbitrárias, longe do aparelho. */
+.phone-group {
+  position: relative;
+  width: var(--frame-w, 300px);
+  max-width: 100%;
+}
+
+/* Halo que envolve aparelho e selos, costurando o conjunto ao fundo */
+.phone-group::before {
+  content: "";
   position: absolute;
-  top: 46px;
-  right: 2%;
-  width: 208px;
-  opacity: 0.92;
-  transform: rotate(6deg);
-  z-index: 1;
+  z-index: 0;
+  inset: 8% -34% 8% -30%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgb(8 120 249 / 0.10),
+    rgb(8 120 249 / 0.04) 45%,
+    transparent 70%
+  );
 }
 
-.hero-stage__back .device {
-  --frame-w: 100%;
-}
-
-.hero-stage__front {
+.phone-group .device {
   position: relative;
   z-index: 2;
 }
@@ -1038,14 +1049,6 @@ p {
 /* Flutuação muito discreta */
 .floaty {
   animation: floaty 7s ease-in-out infinite;
-}
-
-.floaty--delay {
-  animation-delay: -2.4s;
-}
-
-.floaty--delay-2 {
-  animation-delay: -4.6s;
 }
 
 @keyframes floaty {
@@ -1946,32 +1949,50 @@ p {
 /* — Ajustes finos para telas pequenas — */
 @media (max-width: 767px) {
   .hero-stage {
-    min-height: 520px;
+    min-height: auto;
   }
 
-  /* os cartões se aproximam para não vazar da tela */
   .float-card {
     padding: 10px 13px;
     font-size: 0.75rem;
   }
 
-  .float-card--a,
-  .float-card--c {
-    left: 0;
+  /* No mobile a coluna é estreita: os selos avançam menos e se apoiam
+     mais sobre o aparelho, mantendo o conjunto dentro da tela. */
+  .float-card--a {
+    left: -16%;
   }
 
   .float-card--b {
-    right: 0;
+    right: -18%;
   }
 
-  .hero-stage__back {
-    right: 0;
-    width: 170px;
+  .float-card--c {
+    left: -12%;
   }
 
   .footer__bottom {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Espaço mínimo: os selos encostam nas bordas do aparelho */
+  .float-card--a {
+    left: -8%;
+  }
+
+  .float-card--b {
+    right: -9%;
+  }
+
+  .float-card--c {
+    left: -5%;
+  }
+
+  .float-card::after {
+    display: none;
   }
 }
 
@@ -1983,13 +2004,20 @@ p {
 }
 
 @media (max-width: 400px) {
-  /* no iPhone SE/mini o cartão lateral competiria com o aparelho */
-  .float-card--b {
-    display: none;
+  .device {
+    --frame-w: 240px;
+  }
+}
+
+/* Abaixo de 360px o aparelho cede mais largura para os selos caberem */
+@media (max-width: 359px) {
+  .device {
+    --frame-w: 214px;
   }
 
-  .device {
-    --frame-w: 258px;
+  .float-card {
+    padding: 8px 11px;
+    font-size: 0.6875rem;
   }
 }
 

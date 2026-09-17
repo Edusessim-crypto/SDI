@@ -195,25 +195,15 @@
         </ul>
       </div>
 
-      <!-- Composição de mockups.
-           A tela do celular é uma REPRESENTAÇÃO da interface em HTML/CSS, não
-           uma captura do app. Ao receber a screenshot real, troque o bloco
+      <!-- Composição do hero: um aparelho e três selos ancorados a ele.
+           A tela é uma REPRESENTAÇÃO da interface em HTML/CSS, não uma
+           captura do app. Ao receber a screenshot real, troque o bloco
            .app-screen por:
            <img src="assets/images/app/tela-processos.webp" alt="..." width="" height=""> -->
       <div class="hero-stage reveal" style="--reveal-delay:200ms">
 
-        <div class="hero-stage__back floaty floaty--delay" aria-hidden="true">
-          <div class="device" style="--screen-ratio:2.067">
-            <div class="device__screen">
-              <div class="shot-placeholder">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
-                <strong>Meus processos</strong>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="phone-group floaty">
 
-        <div class="hero-stage__front floaty">
           <div class="device" style="--screen-ratio:2.067">
             <div class="device__screen">
 
@@ -273,21 +263,24 @@
 
             </div>
           </div>
-        </div>
 
-        <div class="float-card float-card--a floaty floaty--delay-2">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-          <div>Gov.br<small>Acesso autenticado</small></div>
-        </div>
+          <!-- Selos ancorados ao aparelho: encostam nele e seguem a mesma
+               coluna à esquerda, formando um conjunto só. -->
+          <div class="float-card float-card--a">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            <div>Gov.br<small>Acesso autenticado</small></div>
+          </div>
 
-        <div class="float-card float-card--b floaty floaty--delay">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18z"/><circle cx="11" cy="11" r="2"/></svg>
-          <div>Assinatura<small>Eletrônica</small></div>
-        </div>
+          <div class="float-card float-card--b">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18z"/><circle cx="11" cy="11" r="2"/></svg>
+            <div>Assinatura<small>Eletrônica</small></div>
+          </div>
 
-        <div class="float-card float-card--c floaty floaty--delay-2">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>
-          <div>Acompanhamento<small>Em cada etapa</small></div>
+          <div class="float-card float-card--c">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>
+            <div>Acompanhamento<small>Em cada etapa</small></div>
+          </div>
+
         </div>
 
       </div>
