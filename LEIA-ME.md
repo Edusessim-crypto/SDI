@@ -12,7 +12,10 @@ Para testar localmente, abra `index.html` direto no navegador.
 
 ### 1. Screenshots reais do aplicativo
 
-Há **7 containers preparados** aguardando as telas reais. Cada um está marcado
+Os mockups do painel interno, do login Gov.br e do notebook já foram extraídos
+das peças institucionais e estão em `assets/images/app/`.
+
+Falta **1 container**, aguardando a tela real do menu do aplicativo. Está marcado
 no HTML com:
 
 ```html
@@ -34,17 +37,13 @@ Coloque os arquivos em `assets/images/app/` e substitua o bloco
      width="300" height="620" loading="lazy">
 ```
 
-As telas esperadas, conforme o briefing:
-
-| Tela | Onde aparece |
+| Tela | Situação |
 |---|---|
-| Acesso simples e seguro (Entrar com Gov.br) | Hero e seção Gov.br |
-| Consulte seus processos | Hero (aparelho de trás) e seção Meus Processos |
-| Busca e acompanhamento | Seção de busca |
-| Navegação simples (menu do app) | Seção Aplicativo + Web |
-
-Na seção Aplicativo + Web, o menu está desenhado em CSS (`.app-menu`). O
-comentário no HTML indica como trocá-lo pela screenshot real.
+| Login Gov.br | ✅ no hero e na Área do Cidadão |
+| Painel interno (dashboard) | ✅ na seção Gestão Pública |
+| Notebook com o SDI | ✅ no CTA final |
+| Menu do aplicativo | ⏳ desenhado em CSS (`.app-menu`) — trocar pela screenshot |
+| Consulte seus processos | ⏳ placeholder no aparelho de trás do hero |
 
 ### 2. URLs de acesso ao sistema
 
@@ -83,7 +82,7 @@ controlador (razão social, CNPJ, endereço e contato do encarregado/DPO).
 ## Estrutura
 
 ```
-index.html                  Página principal (22 seções)
+index.html                  Página principal (12 seções)
 politica-de-privacidade.html
 termos-de-uso.html
 404.html
@@ -129,3 +128,4 @@ que contém `class="digital"` em `index.html`.
 - Sem overflow horizontal de 320px a 1920px
 - Zero dependências de framework, zero scripts externos
 - Logos otimizadas (a principal foi de 878 KB para 70 KB)
+- Mockups reais extraídos das peças institucionais, exportados em WebP (~73 KB cada)
