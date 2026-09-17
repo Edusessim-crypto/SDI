@@ -77,6 +77,13 @@
   /* — Ritmo vertical das seções — */
   --section-y: clamp(72px, 9vw, 128px);
 
+  /* — Moldura de smartphone —
+     Ficam no :root para que .phone-group e .device leiam o MESMO valor:
+     definidas dentro de .device, o grupo pai não as enxergava e os dois
+     dessincronizavam. */
+  --frame-w: 264px;
+  --frame-pad: 11px;
+
   --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
 }
@@ -710,8 +717,6 @@ p {
      preenche tudo, sem faixas brancas (contain) nem corte lateral (cover).
      --screen-ratio é altura/largura DA IMAGEM; a conta abaixo soma as bordas
      da moldura (padding), que não fazem parte da tela. */
-  --frame-w: 300px;
-  --frame-pad: 11px;
   width: var(--frame-w);
   max-width: 100%;
   height: calc(
@@ -826,7 +831,7 @@ p {
    em alturas arbitrárias, longe do aparelho. */
 .phone-group {
   position: relative;
-  width: var(--frame-w, 300px);
+  width: var(--frame-w);
   max-width: 100%;
 }
 
@@ -1012,7 +1017,9 @@ p {
   position: relative;
   display: grid;
   place-items: center;
-  min-height: 560px;
+  /* Sem altura fixa: o palco acompanha o aparelho, e os selos — posicionados
+     em % do grupo — ficam na altura certa em qualquer viewport. */
+  padding-block: 12px;
 }
 
 /* Cartões de informação que flutuam ao redor */
@@ -1044,6 +1051,44 @@ p {
   font-size: 0.6875rem;
   font-weight: 600;
   color: var(--color-text-muted);
+}
+
+/* Os três encostam no aparelho e se distribuem pela altura dele: topo à
+   esquerda, meio à direita, base à esquerda. O avanço é grande o bastante
+   para sobrepor a moldura — é o que integra selo e aparelho. */
+.float-card--a {
+  top: 12%;
+  left: -26%;
+}
+
+.float-card--b {
+  top: 46%;
+  right: -28%;
+}
+
+.float-card--c {
+  bottom: 14%;
+  left: -22%;
+}
+
+/* Traço curto ligando cada selo ao aparelho */
+.float-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 1px;
+}
+
+.float-card--a::after,
+.float-card--c::after {
+  left: 100%;
+  background: linear-gradient(90deg, var(--color-blue-light), transparent);
+}
+
+.float-card--b::after {
+  right: 100%;
+  background: linear-gradient(270deg, var(--color-blue-light), transparent);
 }
 
 /* Flutuação muito discreta */
@@ -1998,21 +2043,21 @@ p {
 
 /* O aparelho cede largura em telas estreitas */
 @media (min-width: 401px) and (max-width: 767px) {
-  .device {
-    --frame-w: 272px;
+  :root {
+    --frame-w: 248px;
   }
 }
 
 @media (max-width: 400px) {
-  .device {
-    --frame-w: 240px;
+  :root {
+    --frame-w: 232px;
   }
 }
 
 /* Abaixo de 360px o aparelho cede mais largura para os selos caberem */
 @media (max-width: 359px) {
-  .device {
-    --frame-w: 214px;
+  :root {
+    --frame-w: 208px;
   }
 
   .float-card {
