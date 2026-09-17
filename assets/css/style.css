@@ -569,6 +569,14 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
+/* Grade de 3 colunas fixas: com 6 cards fecha 3x2, sem sobra na
+   última linha. O auto-fit deixava 4 em cima e 2 órfãos embaixo. */
+@media (min-width: 900px) {
+  .grid-cards--3of6 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /* — Lista de checks — */
 .check-list {
   display: grid;
@@ -754,8 +762,11 @@ p {
 .device__screen img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  /* contain preserva a screenshot inteira: as capturas reais têm proporção
+     um pouco mais larga que a moldura, e cover cortaria as laterais. */
+  object-fit: contain;
+  object-position: center;
+  background: var(--color-white);
 }
 
 /* Recorte da câmera */
@@ -834,6 +845,30 @@ p {
   .shot--tilt {
     transform: none;
   }
+}
+
+/* — Painel do sistema no hero: imagem larga com profundidade — */
+.hero-panel {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  width: 100%;
+  max-width: 560px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-white);
+  box-shadow: var(--shadow-lg), 0 0 0 1px rgb(0 35 85 / 0.06);
+}
+
+.hero-panel img {
+  width: 100%;
+  height: auto;
+}
+
+/* O palco fica mais largo quando o protagonista é um painel, não um aparelho */
+.hero-stage--wide {
+  min-height: auto;
+  padding-block: 20px;
 }
 
 /* — Composição do hero: aparelho + cartões flutuantes — */
