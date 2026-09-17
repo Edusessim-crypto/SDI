@@ -819,69 +819,181 @@ p {
   }
 }
 
-/* — Painel do sistema no hero — */
-.hero-stage--panel {
-  position: relative;
-  display: grid;
-  place-items: center;
-  min-height: auto;
-  /* espaço para os selos que avançam sobre as bordas do painel */
-  padding: 26px 0;
-}
-
-.hero-panel {
-  position: relative;
+/* — Composição do hero: aparelho principal + aparelho ao fundo — */
+.hero-stage__back {
+  position: absolute;
+  top: 46px;
+  right: 2%;
+  width: 208px;
+  opacity: 0.92;
+  transform: rotate(6deg);
   z-index: 1;
-  margin: 0;
+}
+
+.hero-stage__back .device {
+  --frame-w: 100%;
+}
+
+.hero-stage__front {
+  position: relative;
+  z-index: 2;
+}
+
+/* — Tela do SDI representada em HTML/CSS —
+   Não é uma captura do app: é uma representação da interface, sem dados
+   reais. Fica nítida em qualquer densidade e pesa quase nada. Ao receber a
+   screenshot oficial, o bloco .app-screen dá lugar a um <img>. */
+.app-screen {
+  --ui: 0.34;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  /* o painel nunca passa da coluna: sem estouro no desktop largo */
-  max-width: 520px;
-  border-radius: var(--radius-lg);
+  height: 100%;
+  background: var(--color-bg);
+  font-size: calc(1rem * var(--ui) * 2.6);
   overflow: hidden;
+}
+
+.app-screen__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px 6px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.app-screen__status {
+  display: inline-flex;
+  color: var(--color-text);
+}
+
+.app-screen__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px 12px;
   background: var(--color-white);
-  box-shadow: var(--shadow-lg), 0 0 0 1px rgb(0 35 85 / 0.07);
 }
 
-.hero-panel img {
-  display: block;
-  width: 100%;
-  height: auto;
+.app-screen__head img {
+  height: 20px;
+  width: auto;
 }
 
-/* Selos ancorados às bordas do painel, não a posições soltas do palco */
-.float-card--top {
-  top: 6%;
-  left: -6%;
+.app-screen__avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(140deg, var(--color-blue-400), var(--color-primary));
 }
 
-.float-card--bottom {
-  bottom: 8%;
-  right: -5%;
+.app-screen__search {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 12px 16px 0;
+  padding: 9px 12px;
+  border-radius: var(--radius-full);
+  background: var(--color-white);
+  border: 1px solid var(--color-border-soft);
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
 }
 
-@media (max-width: 1023px) {
-  /* no tablet/celular os selos entram para dentro da área visível */
-  .float-card--top {
-    left: 0;
-  }
-
-  .float-card--bottom {
-    right: 0;
-  }
+.app-screen__search svg {
+  flex: none;
+  color: var(--color-blue-600);
 }
 
-@media (max-width: 560px) {
-  .hero-stage--panel {
-    padding: 18px 0;
-  }
+.app-screen__tabs {
+  display: flex;
+  gap: 16px;
+  margin: 16px 16px 0;
+  border-bottom: 1px solid var(--color-border-soft);
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
 
-  .float-card--top {
-    top: 2%;
-  }
+.app-screen__tabs span {
+  padding-bottom: 8px;
+  border-bottom: 2px solid transparent;
+}
 
-  .float-card--bottom {
-    bottom: 2%;
-  }
+.app-screen__tabs .is-active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-blue-600);
+}
+
+.app-screen__list {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding: 14px 16px;
+  flex: 1;
+  align-content: start;
+}
+
+.app-screen__list li {
+  display: grid;
+  gap: 7px;
+  padding: 12px 13px;
+  border-radius: 12px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border-soft);
+  box-shadow: 0 1px 2px rgb(0 25 61 / 0.04);
+}
+
+.app-screen__tag {
+  justify-self: start;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-blue-50);
+  color: var(--color-blue-600);
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.app-screen__tag--wait {
+  background: #fff5db;
+  color: #8a6100;
+}
+
+.app-screen__tag--done {
+  background: #e8f6ee;
+  color: #1a6b3d;
+}
+
+/* Linhas neutras no lugar de texto: nada que pareça um dado real */
+.app-screen__line {
+  height: 6px;
+  width: 62%;
+  border-radius: 3px;
+  background: var(--color-border-soft);
+}
+
+.app-screen__line--lg {
+  height: 8px;
+  width: 84%;
+  background: var(--color-border);
+}
+
+.app-screen__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 11px 0 15px;
+  background: var(--color-white);
+  border-top: 1px solid var(--color-border-soft);
+  color: var(--color-border);
+}
+
+.app-screen__nav .is-active {
+  color: var(--color-blue-600);
 }
 
 /* — Composição do hero: aparelho + cartões flutuantes — */
@@ -1833,10 +1945,28 @@ p {
 
 /* — Ajustes finos para telas pequenas — */
 @media (max-width: 767px) {
-  /* os selos encolhem para não competir com o painel */
+  .hero-stage {
+    min-height: 520px;
+  }
+
+  /* os cartões se aproximam para não vazar da tela */
   .float-card {
     padding: 10px 13px;
     font-size: 0.75rem;
+  }
+
+  .float-card--a,
+  .float-card--c {
+    left: 0;
+  }
+
+  .float-card--b {
+    right: 0;
+  }
+
+  .hero-stage__back {
+    right: 0;
+    width: 170px;
   }
 
   .footer__bottom {
@@ -1853,6 +1983,11 @@ p {
 }
 
 @media (max-width: 400px) {
+  /* no iPhone SE/mini o cartão lateral competiria com o aparelho */
+  .float-card--b {
+    display: none;
+  }
+
   .device {
     --frame-w: 258px;
   }
