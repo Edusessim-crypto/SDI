@@ -1055,9 +1055,11 @@ p {
 
 /* Os três encostam no aparelho e se distribuem pela altura dele: topo à
    esquerda, meio à direita, base à esquerda. O avanço é grande o bastante
-   para sobrepor a moldura — é o que integra selo e aparelho. */
+   para sobrepor a moldura — é o que integra selo e aparelho.
+   O primeiro começa abaixo do cabeçalho da tela (status bar + logo, que
+   ocupam os primeiros ~15% da altura) para não cobrir a marca do SDI. */
 .float-card--a {
-  top: 12%;
+  top: 21%;
   left: -26%;
 }
 
