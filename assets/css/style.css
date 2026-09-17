@@ -1117,9 +1117,13 @@ p {
 }
 
 .hero__title {
-  font-size: clamp(2.5rem, 5.6vw, 3.75rem);
+  /* A headline quebra sozinha: com text-wrap:balance as linhas saem
+     equilibradas em qualquer largura, sem <br> fixo — que estouraria
+     no mobile, onde "Acompanhe seus processos" não cabe em uma linha. */
+  font-size: clamp(2.25rem, 5.2vw, 3.75rem);
   line-height: 1.06;
   letter-spacing: -0.035em;
+  text-wrap: balance;
 }
 
 .hero__desc {
