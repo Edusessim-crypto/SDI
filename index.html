@@ -1,0 +1,1204 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>SDI — Sistema Digital de Informações | Gestão Pública Digital</title>
+<meta name="description" content="Consulte e acompanhe processos administrativos pelo SDI. Acesso integrado ao Gov.br, informações vinculadas ao CPF ou CNPJ e acompanhamento pelo aplicativo ou web.">
+<meta name="theme-color" content="#002355">
+<meta name="author" content="SDI — Sistema Digital de Informações">
+
+<!-- TODO: ajustar para o domínio definitivo antes de publicar -->
+<link rel="canonical" href="https://www.sdi.com.br/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="SDI — Sistema Digital de Informações">
+<meta property="og:title" content="SDI — Sistema Digital de Informações | Gestão Pública Digital">
+<meta property="og:description" content="Consulte e acompanhe processos administrativos pelo SDI. Acesso integrado ao Gov.br, informações vinculadas ao CPF ou CNPJ e acompanhamento pelo aplicativo ou web.">
+<meta property="og:url" content="https://www.sdi.com.br/">
+<meta property="og:image" content="https://www.sdi.com.br/assets/images/backgrounds/og-sdi.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SDI — Sistema Digital de Informações">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SDI — Sistema Digital de Informações | Gestão Pública Digital">
+<meta name="twitter:description" content="Consulte e acompanhe processos administrativos pelo SDI. Acesso integrado ao Gov.br e acompanhamento pelo aplicativo ou web.">
+<meta name="twitter:image" content="https://www.sdi.com.br/assets/images/backgrounds/og-sdi.jpg">
+
+<!-- Ícones -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+
+<!-- Tipografia -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.sdi.com.br/#organizacao",
+      "name": "SDI — Sistema Digital de Informações",
+      "url": "https://www.sdi.com.br/",
+      "logo": "https://www.sdi.com.br/assets/logos/sdi/sdi-azul.png",
+      "description": "Sistema Digital de Informações para consulta e acompanhamento de processos administrativos."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "SDI — Sistema Digital de Informações",
+      "applicationCategory": "GovernmentApplication",
+      "operatingSystem": "Android, iOS, Web",
+      "url": "https://www.sdi.com.br/",
+      "inLanguage": "pt-BR",
+      "publisher": { "@id": "https://www.sdi.com.br/#organizacao" },
+      "description": "Plataforma para consulta e acompanhamento de processos e solicitações administrativas, com acesso pela conta Gov.br."
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- ==========================================================================
+     HEADER
+     ========================================================================== -->
+<header class="header" data-header>
+  <div class="shell header__inner">
+
+    <a class="header__logo" href="#topo" aria-label="SDI — Sistema Digital de Informações, início">
+      <img src="assets/logos/sdi/sdi-azul.png" alt="SDI — Sistema Digital de Informações" width="420" height="311" style="height:34px;width:auto">
+    </a>
+
+    <nav class="header__nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="#topo">Início</a></li>
+        <li><a href="#o-sdi">O SDI</a></li>
+        <li><a href="#funcionalidades">Funcionalidades</a></li>
+        <li><a href="#area-do-cidadao">Área do Cidadão</a></li>
+        <li><a href="#aplicativo">Aplicativo</a></li>
+        <li><a href="#gestao-publica">Para a Gestão Pública</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <!-- TODO: substituir "#" pela URL real do SDI web -->
+      <a class="btn btn--secondary btn--sm" href="#">Acessar SDI</a>
+      <!-- TODO: substituir "#" pela URL real da Área do Cidadão -->
+      <a class="btn btn--primary btn--sm" href="#">
+        Área do Cidadão
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <button class="burger" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-mobile" aria-label="Abrir menu">
+        <span class="burger__icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- Painel mobile -->
+<div class="mobile-panel" id="menu-mobile" data-menu-panel>
+  <div class="shell mobile-panel__inner">
+    <nav class="mobile-nav" aria-label="Navegação mobile">
+      <a href="#topo">Início <span>01</span></a>
+      <a href="#o-sdi">O SDI <span>02</span></a>
+      <a href="#funcionalidades">Funcionalidades <span>03</span></a>
+      <a href="#area-do-cidadao">Área do Cidadão <span>04</span></a>
+      <a href="#aplicativo">Aplicativo <span>05</span></a>
+      <a href="#gestao-publica">Para a Gestão Pública <span>06</span></a>
+      <a href="#faq">Perguntas frequentes <span>07</span></a>
+    </nav>
+    <div class="mobile-panel__actions">
+      <!-- TODO: URL real da Área do Cidadão -->
+      <a class="btn btn--primary" href="#">Área do Cidadão</a>
+      <!-- TODO: URL real do SDI web -->
+      <a class="btn btn--secondary" href="#">Acessar SDI</a>
+    </div>
+  </div>
+</div>
+
+<main id="conteudo">
+
+<!-- ==========================================================================
+     HERO
+     ========================================================================== -->
+<section class="hero" id="topo">
+
+  <div class="deco" aria-hidden="true">
+    <div class="grid-lines"></div>
+    <div class="glow glow--blue" style="width:640px;height:640px;top:-260px;right:-180px"></div>
+    <div class="glow glow--cyan" style="width:420px;height:420px;bottom:-200px;left:-140px;opacity:.4"></div>
+    <div class="orbit orbit--spin" style="width:620px;height:620px;top:-90px;right:-120px">
+      <span class="orbit__dot"></span>
+    </div>
+    <div class="orbit orbit--spin-slow" style="width:880px;height:880px;top:-220px;right:-260px">
+      <span class="orbit__dot orbit__dot--yellow"></span>
+    </div>
+  </div>
+
+  <div class="shell">
+    <div class="hero__grid">
+
+      <div class="hero__content">
+        <p class="eyebrow reveal">Sistema Digital de Informações</p>
+
+        <h1 class="hero__title reveal" style="--reveal-delay:80ms">
+          Seus processos.<br>
+          Suas informações.<br>
+          <span class="text-accent">Sempre ao seu alcance.</span>
+        </h1>
+
+        <p class="lead hero__desc reveal" style="--reveal-delay:160ms">
+          O SDI conecta cidadãos e administração pública em um ambiente digital para
+          consultar, acompanhar e gerenciar processos administrativos com mais
+          simplicidade, segurança e transparência.
+        </p>
+
+        <div class="btn-row reveal" style="--reveal-delay:240ms">
+          <!-- TODO: URL real da Área do Cidadão -->
+          <a class="btn btn--primary" href="#">
+            Acessar Área do Cidadão
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn--secondary" href="#o-sdi">Conhecer o SDI</a>
+        </div>
+
+        <ul class="pill-row reveal" style="--reveal-delay:320ms">
+          <li class="pill">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Gov.br
+          </li>
+          <li class="pill">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Acesso Web
+          </li>
+          <li class="pill">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+            Aplicativo
+          </li>
+        </ul>
+      </div>
+
+      <!-- Composição de mockups -->
+      <div class="hero-stage reveal" style="--reveal-delay:200ms">
+
+        <!-- Aparelho secundário, parcialmente atrás -->
+        <div class="hero-stage__back floaty floaty--delay" aria-hidden="true">
+          <div class="device" style="max-width:100%">
+            <div class="device__screen">
+              <!-- Inserir screenshot real do SDI aqui — tela "Consulte seus processos" -->
+              <div class="shot-placeholder">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                <strong>Consulte seus processos</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aparelho principal -->
+        <div class="hero-stage__front floaty">
+          <div class="device">
+            <div class="device__screen">
+              <!-- Inserir screenshot real do SDI aqui — tela "Acesso simples e seguro" (Entrar com Gov.br) -->
+              <div class="shot-placeholder">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <strong>Acesso simples e seguro</strong>
+                <span>Inserir aqui a screenshot real<br>da tela "Entrar com Gov.br"</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cartões flutuantes -->
+        <div class="float-card float-card--a floaty floaty--delay-2">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          <div>Gov.br<small>Acesso autenticado</small></div>
+        </div>
+
+        <div class="float-card float-card--b floaty floaty--delay">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h3"/></svg>
+          <div>Processos<small>Vinculados ao perfil</small></div>
+        </div>
+
+        <div class="float-card float-card--c floaty floaty--delay-2">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>
+          <div>Acompanhamento<small>CPF ou CNPJ</small></div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     POSICIONAMENTO
+     ========================================================================== -->
+<section class="section section--light" id="o-sdi">
+  <div class="shell">
+
+    <div class="section-head">
+      <p class="eyebrow reveal">Gestão pública digital</p>
+      <h2 class="h2 reveal" style="--reveal-delay:80ms">
+        Informação pública mais perto de quem precisa.
+      </h2>
+      <p class="lead reveal" style="--reveal-delay:160ms">
+        O SDI foi desenvolvido para digitalizar a consulta e o acompanhamento de
+        processos administrativos, conectando cidadãos e administração pública de
+        forma simples, organizada e segura.
+      </p>
+    </div>
+
+    <div class="grid-cards grid-cards--3" data-stagger="110">
+      <div class="numbered reveal">
+        <p class="numbered__num">01</p>
+        <h3 class="numbered__title">Mais simplicidade</h3>
+        <p class="numbered__text">Informações importantes reunidas em uma experiência intuitiva.</p>
+      </div>
+      <div class="numbered reveal">
+        <p class="numbered__num">02</p>
+        <h3 class="numbered__title">Mais transparência</h3>
+        <p class="numbered__text">Acompanhe o andamento e o histórico dos seus processos.</p>
+      </div>
+      <div class="numbered reveal">
+        <p class="numbered__num">03</p>
+        <h3 class="numbered__title">Mais praticidade</h3>
+        <p class="numbered__text">Consulte informações de onde estiver, sem depender do atendimento presencial.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     CONSULTE SEUS PROCESSOS
+     ========================================================================== -->
+<section class="section section--soft" id="funcionalidades">
+
+  <div class="deco" aria-hidden="true">
+    <div class="glow glow--blue" style="width:480px;height:480px;top:-120px;left:-200px;opacity:.28"></div>
+  </div>
+
+  <div class="shell">
+    <div class="split">
+
+      <div class="stack">
+        <p class="eyebrow reveal">Meus processos</p>
+        <h2 class="h2 reveal" style="--reveal-delay:80ms">
+          Consulte seus processos em <span class="text-accent">poucos toques.</span>
+        </h2>
+        <p class="lead reveal" style="--reveal-delay:140ms">
+          Visualize os processos vinculados ao perfil selecionado e acompanhe suas
+          informações diretamente pelo SDI.
+        </p>
+
+        <ul class="check-list reveal" style="--reveal-delay:200ms">
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Processos vinculados ao CPF ou CNPJ
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Consulta rápida
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Informações organizadas
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Acesso remoto
+          </li>
+        </ul>
+
+        <p class="reveal" style="--reveal-delay:260ms">
+          <a class="link-arrow" href="#historico">
+            Conhecer funcionalidades
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </p>
+      </div>
+
+      <div class="split__visual reveal" style="--reveal-delay:120ms">
+        <div class="hero-stage" style="min-height:auto">
+          <div class="device floaty">
+            <div class="device__screen">
+              <!-- Inserir screenshot real do SDI aqui — tela "Consulta de Processos do Titular" -->
+              <div class="shot-placeholder">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+                <strong>Consulta de Processos do Titular</strong>
+                <span>Inserir aqui a screenshot real da tela</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     BUSCA E ACOMPANHAMENTO
+     ========================================================================== -->
+<section class="section section--light">
+  <div class="shell">
+    <div class="split split--reverse">
+
+      <div class="stack">
+        <p class="eyebrow reveal">Busca e acompanhamento</p>
+        <h2 class="h2 reveal" style="--reveal-delay:80ms">
+          Encontre rapidamente o que procura.
+        </h2>
+        <p class="lead reveal" style="--reveal-delay:140ms">
+          Pesquise seus processos por protocolo, assunto ou palavra-chave e visualize
+          o andamento de maneira simples.
+        </p>
+
+        <div class="stack reveal" style="--reveal-delay:200ms; gap:14px">
+          <div class="feature-note">
+            <p class="feature-note__label">Busca inteligente</p>
+            <p class="feature-note__text">Localize processos por protocolo, assunto ou palavra-chave.</p>
+          </div>
+          <div class="feature-note">
+            <p class="feature-note__label">Acompanhamento por status</p>
+            <p class="feature-note__text">Visualize processos em andamento ou concluídos.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="split__visual reveal" style="--reveal-delay:120ms">
+        <div class="hero-stage" style="min-height:auto">
+          <div class="device floaty floaty--delay">
+            <div class="device__screen">
+              <!-- Inserir screenshot real do SDI aqui — tela "Busca e acompanhamento" -->
+              <div class="shot-placeholder">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+                <strong>Busca e acompanhamento</strong>
+                <span>Inserir aqui a screenshot real da tela</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     HISTÓRICO E ANDAMENTO
+     ========================================================================== -->
+<section class="section section--tint" id="historico">
+  <div class="shell">
+
+    <div class="section-head">
+      <p class="eyebrow reveal">Histórico e andamento</p>
+      <h2 class="h2 reveal" style="--reveal-delay:80ms">
+        Cada etapa do processo, mais fácil de acompanhar.
+      </h2>
+      <p class="lead reveal" style="--reveal-delay:160ms">
+        O SDI permite acompanhar o status atual, movimentações, tramitações e etapas
+        concluídas dos processos vinculados ao usuário.
+      </p>
+    </div>
+
+    <div class="grid-cards" data-stagger="90">
+      <article class="card reveal">
+        <span class="card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </span>
+        <h3 class="card__title">Status atual</h3>
+        <p class="card__text">Saiba em que situação o processo se encontra.</p>
+      </article>
+
+      <article class="card reveal">
+        <span class="card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h13M3 7l3-3M3 7l3 3"/><path d="M21 17H8M21 17l-3-3M21 17l-3 3"/></svg>
+        </span>
+        <h3 class="card__title">Movimentações</h3>
+        <p class="card__text">Acompanhe as alterações registradas durante a tramitação.</p>
+      </article>
+
+      <article class="card reveal">
+        <span class="card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 4v4h4"/><path d="M12 8v4l3 2"/></svg>
+        </span>
+        <h3 class="card__title">Histórico</h3>
+        <p class="card__text">Consulte o histórico das etapas do processo.</p>
+      </article>
+
+      <article class="card reveal">
+        <span class="card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7 10 17l-5-5"/><path d="M20 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+        </span>
+        <h3 class="card__title">Processos concluídos</h3>
+        <p class="card__text">Tenha acesso também aos processos já finalizados.</p>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     GOV.BR
+     ========================================================================== -->
+<section class="section section--dark" id="area-do-cidadao">
+
+  <div class="deco" aria-hidden="true">
+    <div class="grid-lines grid-lines--dark"></div>
+    <div class="glow glow--cyan" style="width:600px;height:600px;top:-160px;right:-120px;opacity:.5"></div>
+    <div class="orbit orbit--spin" style="width:700px;height:700px;top:-120px;right:-180px">
+      <span class="orbit__dot"></span>
+    </div>
+  </div>
+
+  <div class="shell">
+    <div class="split">
+
+      <div class="stack">
+        <p class="eyebrow reveal">Integração Gov.br</p>
+        <h2 class="h2 reveal" style="--reveal-delay:80ms">
+          Acesso simples.<br>
+          <span class="text-accent">Identificação segura.</span>
+        </h2>
+        <p class="lead reveal" style="--reveal-delay:140ms">
+          O acesso à Área do Cidadão é realizado por meio da conta Gov.br. Após a
+          autenticação, o SDI identifica o usuário e apresenta os processos vinculados
+          ao CPF ou CNPJ autenticado.
+        </p>
+
+        <ul class="check-list reveal" style="--reveal-delay:200ms">
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Acesso pela conta Gov.br
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Identificação do usuário
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Processos vinculados ao perfil autenticado
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Mais segurança no acesso às informações
+          </li>
+        </ul>
+
+        <div class="btn-row reveal" style="--reveal-delay:260ms">
+          <!-- TODO: URL real da Área do Cidadão -->
+          <a class="btn btn--primary" href="#">
+            Acessar Área do Cidadão
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="split__visual reveal" style="--reveal-delay:120ms">
+        <div class="hero-stage" style="min-height:auto">
+          <div class="device floaty">
+            <div class="device__screen">
+              <!-- Inserir screenshot real do SDI aqui — tela "Acesso simples e seguro" / "Entrar com Gov.br" -->
+              <div class="shot-placeholder">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><path d="M12 16v2"/></svg>
+                <strong>Entrar com Gov.br</strong>
+                <span>Inserir aqui a screenshot real da tela</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     CPF, CNPJ E PERFIS
+     ========================================================================== -->
+<section class="section section--light">
+  <div class="shell">
+    <div class="split">
+
+      <div class="stack">
+        <p class="eyebrow reveal">Perfis de acesso</p>
+        <h2 class="h2 reveal" style="--reveal-delay:80ms">
+          Um acesso. Diferentes perfis.
+        </h2>
+        <p class="lead reveal" style="--reveal-delay:140ms">
+          O SDI permite consultar processos vinculados ao perfil selecionado, incluindo
+          identificações por CPF ou CNPJ.
+        </p>
+
+        <div class="stack reveal" style="--reveal-delay:200ms; gap:14px">
+          <div class="profile-card">
+            <span class="profile-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+            </span>
+            <div>
+              <p class="profile-card__kind">Pessoa física</p>
+              <p class="profile-card__doc">CPF</p>
+            </div>
+          </div>
+
+          <div class="profile-card">
+            <span class="profile-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V6a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v15"/><path d="M15 10h3a2 2 0 0 1 2 2v9"/><path d="M8 8h3M8 12h3M8 16h3M2 21h20"/></svg>
+            </span>
+            <div>
+              <p class="profile-card__kind">Pessoa jurídica</p>
+              <p class="profile-card__doc">CNPJ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="split__visual reveal" style="--reveal-delay:120ms">
+        <!-- Representação da interface "Trocar perfil" -->
+        <div class="switch-panel" style="max-width:420px;margin-inline:auto">
+          <p class="switch-panel__head">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h13M3 8l3-3M3 8l3 3"/><path d="M21 16H8M21 16l-3-3M21 16l-3 3"/></svg>
+            Trocar perfil
+          </p>
+          <div class="switch-option switch-option--active">
+            <span class="switch-option__dot" aria-hidden="true"></span>
+            <div>Pessoa física<span>CPF</span></div>
+          </div>
+          <div class="switch-option">
+            <span class="switch-option__dot" aria-hidden="true"></span>
+            <div>Pessoa jurídica<span>CNPJ</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     APLICATIVO + WEB
+     ========================================================================== -->
+<section class="section section--soft" id="aplicativo">
+  <div class="shell">
+    <div class="split split--reverse">
+
+      <div class="stack">
+        <p class="eyebrow reveal">Onde você estiver</p>
+        <h2 class="h2 reveal" style="--reveal-delay:80ms">
+          SDI no celular.<br>
+          <span class="text-accent">SDI na web.</span>
+        </h2>
+        <p class="lead reveal" style="--reveal-delay:140ms">
+          Consulte seus processos pelo aplicativo e acesse também a versão web
+          diretamente pelo menu do SDI.
+        </p>
+
+        <ul class="check-list reveal" style="--reveal-delay:200ms">
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Experiência integrada
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Acesso remoto
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Navegação simples
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Diferentes dispositivos
+          </li>
+        </ul>
+
+        <div class="btn-row reveal" style="--reveal-delay:260ms">
+          <!-- TODO: URL real do SDI web -->
+          <a class="btn btn--navy" href="#">
+            Acessar SDI na web
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="split__visual reveal" style="--reveal-delay:120ms">
+        <!-- Representação do menu do aplicativo (recurso "Navegação simples") -->
+        <div class="app-menu" style="max-width:400px;margin-inline:auto">
+          <div class="app-menu__item">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+            Meus Processos
+          </div>
+          <div class="app-menu__item">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 4 9 15 15 0 0 1-4 9 15 15 0 0 1-4-9 15 15 0 0 1 4-9z"/></svg>
+            Acessar SDI na web
+          </div>
+          <div class="app-menu__item">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h13M3 8l3-3M3 8l3 3"/><path d="M21 16H8M21 16l-3-3M21 16l-3 3"/></svg>
+            Trocar perfil
+          </div>
+          <div class="app-menu__item app-menu__item--exit">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5M21 12H9"/></svg>
+            Sair
+          </div>
+        </div>
+
+        <!-- Inserir screenshot real do SDI aqui — tela "Navegação simples" (menu do aplicativo).
+             Ao inserir, o bloco .app-menu acima pode ser substituído por:
+             <div class="device"><div class="device__screen"><img src="assets/images/app/navegacao-simples.webp" alt="Menu do aplicativo SDI" width="300" height="620" loading="lazy"></div></div> -->
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     COMO FUNCIONA
+     ========================================================================== -->
+<section class="section section--light">
+  <div class="shell">
+
+    <div class="section-head">
+      <p class="eyebrow reveal">Como funciona</p>
+      <h2 class="h2 reveal" style="--reveal-delay:80ms">
+        Simples do acesso à consulta.
+      </h2>
+    </div>
+
+    <div class="steps" data-stagger="120">
+      <div class="step reveal">
+        <span class="step__marker">01</span>
+        <p class="step__label">Passo 01</p>
+        <h3 class="step__title">Acesse o SDI</h3>
+        <p class="step__text">Entre na Área do Cidadão.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step__marker">02</span>
+        <p class="step__label">Passo 02</p>
+        <h3 class="step__title">Autentique-se</h3>
+        <p class="step__text">Utilize sua conta Gov.br.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step__marker">03</span>
+        <p class="step__label">Passo 03</p>
+        <h3 class="step__title">Selecione seu perfil</h3>
+        <p class="step__text">Acesse o perfil correspondente ao CPF ou CNPJ.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step__marker">04</span>
+        <p class="step__label">Passo 04</p>
+        <h3 class="step__title">Consulte seus processos</h3>
+        <p class="step__text">Pesquise e acompanhe os processos vinculados ao usuário.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     SEM DESLOCAMENTOS DESNECESSÁRIOS
+     ========================================================================== -->
+<section class="section section--soft">
+
+  <div class="deco" aria-hidden="true">
+    <div class="glow glow--blue" style="width:520px;height:520px;bottom:-240px;right:-160px;opacity:.25"></div>
+  </div>
+
+  <div class="shell">
+
+    <div class="section-head">
+      <p class="eyebrow reveal">Praticidade</p>
+      <h2 class="h2 reveal" style="--reveal-delay:80ms">
+        Informação sem burocracia desnecessária.
+      </h2>
+      <p class="lead reveal" style="--reveal-delay:160ms">
+        Com o SDI, o cidadão pode consultar informações e acompanhar seus processos
+        remotamente, reduzindo a necessidade de comparecer presencialmente apenas
+        para verificar o andamento de uma solicitação.
+      </p>
+    </div>
+
+    <div class="connect reveal" style="--reveal-delay:200ms">
+      <div class="connect__node">
+        <span class="connect__icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+        </span>
+        <p class="connect__name">Cidadão</p>
+        <p class="connect__desc">Consulta de onde estiver</p>
+      </div>
+
+      <span class="connect__link" aria-hidden="true">
+        <svg width="46" height="12" viewBox="0 0 46 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 6h36" stroke-dasharray="4 5"/><path d="m38 1 5 5-5 5" stroke-linejoin="round"/></svg>
+      </span>
+
+      <div class="connect__node connect__node--center">
+        <span class="connect__icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+        </span>
+        <p class="connect__name">SDI</p>
+        <p class="connect__desc">Ambiente digital de consulta</p>
+      </div>
+
+      <span class="connect__link" aria-hidden="true">
+        <svg width="46" height="12" viewBox="0 0 46 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 6h36" stroke-dasharray="4 5"/><path d="m38 1 5 5-5 5" stroke-linejoin="round"/></svg>
+      </span>
+
+      <div class="connect__node">
+        <span class="connect__icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l7-5 7 5v12"/><path d="M10 21v-5h4v5"/></svg>
+        </span>
+        <p class="connect__name">Administração pública</p>
+        <p class="connect__desc">Processos administrativos</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     PARA A GESTÃO PÚBLICA
+     ========================================================================== -->
+<section class="section section--tint" id="gestao-publica">
+  <div class="shell">
+
+    <div class="section-head">
+      <p class="eyebrow reveal">Para a administração pública</p>
+      <h2 class="h2 reveal" style="--reveal-delay:80ms">
+        Uma gestão mais digital também melhora a experiência do cidadão.
+      </h2>
+      <p class="lead reveal" style="--reveal-delay:160ms">
+        O SDI contribui para a modernização dos processos administrativos e para uma
+        relação mais simples entre poder público e população.
+      </p>
+    </div>
+
+    <div class="grid-cards grid-cards--3" data-stagger="90">
+      <article class="card reveal">
+        <span class="card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>
+        </span>
+        <h3 class="card__title">Digitalização</h3>
+        <p class="card__text">Mais processos e informações disponíveis em ambiente digital.</p>
+      </article>
+
+      <article class="card reveal">
+        <span class="card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </span>
+        <h3 class="card__title">Atendimento</h3>
+        <p class="card__text">Menos dependência de consultas presenciais para acompanhamento de processos.</p>
+      </article>
+
+      <article class="card reveal">
+        <span class="card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        </span>
+        <h3 class="card__title">Organização</h3>
+        <p class="card__text">Informações apresentadas de maneira estruturada e acessível.</p>
+      </article>
+
+      <article class="card reveal">
+        <span class="card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        </span>
+        <h3 class="card__title">Transparência</h3>
+        <p class="card__text">Mais facilidade para o cidadão acompanhar suas solicitações.</p>
+      </article>
+
+      <article class="card reveal">
+        <span class="card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-9 12h7l-1 8 9-12h-7z"/></svg>
+        </span>
+        <h3 class="card__title">Produtividade</h3>
+        <p class="card__text">Redução de tarefas operacionais relacionadas à consulta de andamento.</p>
+      </article>
+
+      <article class="card reveal">
+        <span class="card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>
+        </span>
+        <h3 class="card__title">Sustentabilidade</h3>
+        <p class="card__text">Menor dependência de papel e processos físicos.</p>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==========================================================================
+     100% DIGITAL
+     Para ocultar este bloco, basta remover ou comentar a <section> inteira.
+     ========================================================================== -->
+<section class="section section--dark">
+
+  <div class="deco" aria-hidden="true">
+    <div class="grid-lines grid-lines--dark"></div>
+    <div class="glow glow--cyan" style="width:560px;height:560px;top:-180px;left:-140px;opacity:.45"></div>
+    <div class="orbit orbit--spin-slow" style="width:760px;height:760px;bottom:-380px;right:-200px">
+      <span class="orbit__dot orbit__dot--yellow"></span>
+    </div>
+  </div>
+
+  <div class="shell">
+    <div class="digital">
+
+      <p class="digital__figure reveal">
+        100%
+        <small>DIGITAL</small>
+      </p>
+
+      <div class="stack reveal" style="--reveal-delay:120ms">
+        <p class="lead" style="font-size:clamp(1.125rem,1.8vw,1.375rem);color:rgb(255 255 255/.86)">
+          Adeus ao papel.<br>
+          Bem-vindo a uma nova era.
+        </p>
+
+        <ul class="digital__list">
+          <li class="digital__item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+            Processos digitais
+          </li>
+          <li class="digital__item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+            Assinatura eletrônica
+          </li>
+          <li class="digital__item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 1 0 0-9 6 6 0 0 0-11.6-1.6A4 4 0 0 0 6 19z"/></svg>
+            Acesso de qualquer lugar
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     SUSTENTABILIDADE
+     ========================================================================== -->
+<section class="section section--green">
+  <div class="shell">
+    <div class="split">
+
+      <div class="stack">
+        <p class="eyebrow reveal">Sustentabilidade</p>
+        <h2 class="h2 reveal" style="--reveal-delay:80ms">
+          Menos papel.<br>Mais futuro.
+        </h2>
+        <p class="lead reveal" style="--reveal-delay:140ms">
+          A transformação digital também contribui para uma gestão pública mais
+          eficiente e responsável, reduzindo a dependência de documentos e fluxos
+          físicos.
+        </p>
+      </div>
+
+      <div class="split__visual reveal" style="--reveal-delay:120ms">
+        <div class="grid-cards" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+          <div class="card">
+            <span class="leaf-badge" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>
+            </span>
+            <h3 class="card__title">Redução do consumo de papel</h3>
+            <p class="card__text">Menos impressão e arquivamento de documentos físicos.</p>
+          </div>
+          <div class="card">
+            <span class="leaf-badge" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m7 19-3-5 3-5"/><path d="M4 14h10l2.5-4.5"/><path d="m17 5 3 5-3 5"/><path d="M20 10H10L7.5 5.5"/></svg>
+            </span>
+            <h3 class="card__title">Gestão mais responsável</h3>
+            <p class="card__text">Fluxos digitais no lugar da circulação de papel.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     ECOSSISTEMA EGOVERNA
+     ========================================================================== -->
+<section class="section section--light">
+  <div class="shell">
+    <div class="ecosystem reveal">
+
+      <div class="ecosystem__logos">
+        <img class="sdi-mark" src="assets/logos/sdi/sdi-azul.png" alt="SDI — Sistema Digital de Informações" width="420" height="311" loading="lazy" style="height:38px;width:auto">
+        <span class="ecosystem__plus" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        </span>
+        <img src="assets/logos/egoverna/egoverna-preto.png" alt="eGoverna" width="360" height="131" loading="lazy" style="height:30px;width:auto">
+      </div>
+
+      <div class="stack" style="gap:18px;justify-items:center;max-width:680px">
+        <p class="eyebrow">Ecossistema eGoverna</p>
+        <h2 class="h2">Tecnologia integrada para transformar a gestão pública.</h2>
+        <p class="lead">
+          O SDI faz parte do ecossistema de soluções eGoverna, conectando tecnologia,
+          informação e serviços públicos em uma experiência digital.
+        </p>
+      </div>
+
+      <!-- TODO: confirmar a URL institucional do eGoverna -->
+      <a class="btn btn--secondary" href="https://www.egoverna.com.br" target="_blank" rel="noopener">
+        Conhecer o eGoverna
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     CTA FINAL
+     ========================================================================== -->
+<section class="section section--dark">
+
+  <div class="deco" aria-hidden="true">
+    <div class="grid-lines grid-lines--dark"></div>
+    <div class="glow glow--cyan" style="width:620px;height:620px;top:-200px;right:-160px;opacity:.5"></div>
+    <div class="glow glow--blue" style="width:420px;height:420px;bottom:-220px;left:-120px;opacity:.35"></div>
+  </div>
+
+  <div class="shell">
+    <div class="cta-final">
+
+      <div class="cta-final__content">
+        <h2 class="h2 reveal">
+          Processos mais próximos.<br>
+          <span class="text-accent">Informação mais acessível.</span>
+        </h2>
+        <p class="lead reveal" style="--reveal-delay:100ms">
+          Conheça o SDI e descubra uma nova forma de conectar cidadãos e
+          administração pública.
+        </p>
+        <div class="btn-row reveal" style="--reveal-delay:180ms">
+          <!-- TODO: URL real da Área do Cidadão -->
+          <a class="btn btn--primary" href="#">
+            Acessar Área do Cidadão
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn--ghost-light" href="#o-sdi">Conhecer a solução</a>
+        </div>
+      </div>
+
+      <div class="cta-final__visual reveal" style="--reveal-delay:140ms">
+        <div class="device floaty" style="max-width:250px">
+          <div class="device__screen">
+            <!-- Inserir screenshot real do SDI aqui — tela de destaque para o CTA final -->
+            <div class="shot-placeholder">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+              <strong>SDI</strong>
+              <span>Inserir aqui a screenshot real</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     FAQ
+     ========================================================================== -->
+<section class="section section--soft" id="faq">
+  <div class="shell">
+
+    <div class="section-head">
+      <p class="eyebrow reveal">Perguntas frequentes</p>
+      <h2 class="h2 reveal" style="--reveal-delay:80ms">Dúvidas sobre o SDI</h2>
+    </div>
+
+    <div class="faq" data-stagger="70">
+
+      <div class="faq__item reveal">
+        <h3>
+          <button class="faq__trigger" type="button" data-faq-trigger aria-expanded="false" aria-controls="faq-1" id="faq-btn-1">
+            O que é o SDI?
+            <span class="faq__icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+        </h3>
+        <div class="faq__panel" id="faq-1" role="region" aria-labelledby="faq-btn-1">
+          <div><p class="faq__answer">O SDI — Sistema Digital de Informações — é uma plataforma desenvolvida para consulta e acompanhamento de processos e solicitações administrativas.</p></div>
+        </div>
+      </div>
+
+      <div class="faq__item reveal">
+        <h3>
+          <button class="faq__trigger" type="button" data-faq-trigger aria-expanded="false" aria-controls="faq-2" id="faq-btn-2">
+            Como faço para acessar o SDI?
+            <span class="faq__icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+        </h3>
+        <div class="faq__panel" id="faq-2" role="region" aria-labelledby="faq-btn-2">
+          <div><p class="faq__answer">O acesso à Área do Cidadão é realizado utilizando uma conta Gov.br.</p></div>
+        </div>
+      </div>
+
+      <div class="faq__item reveal">
+        <h3>
+          <button class="faq__trigger" type="button" data-faq-trigger aria-expanded="false" aria-controls="faq-3" id="faq-btn-3">
+            Quais processos posso visualizar?
+            <span class="faq__icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+        </h3>
+        <div class="faq__panel" id="faq-3" role="region" aria-labelledby="faq-btn-3">
+          <div><p class="faq__answer">O SDI apresenta os processos vinculados ao CPF ou CNPJ correspondente ao perfil autenticado.</p></div>
+        </div>
+      </div>
+
+      <div class="faq__item reveal">
+        <h3>
+          <button class="faq__trigger" type="button" data-faq-trigger aria-expanded="false" aria-controls="faq-4" id="faq-btn-4">
+            Posso pesquisar um processo específico?
+            <span class="faq__icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+        </h3>
+        <div class="faq__panel" id="faq-4" role="region" aria-labelledby="faq-btn-4">
+          <div><p class="faq__answer">Sim. Os processos podem ser pesquisados por informações como protocolo, assunto ou palavra-chave.</p></div>
+        </div>
+      </div>
+
+      <div class="faq__item reveal">
+        <h3>
+          <button class="faq__trigger" type="button" data-faq-trigger aria-expanded="false" aria-controls="faq-5" id="faq-btn-5">
+            É possível acompanhar processos concluídos?
+            <span class="faq__icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+        </h3>
+        <div class="faq__panel" id="faq-5" role="region" aria-labelledby="faq-btn-5">
+          <div><p class="faq__answer">Sim. A interface permite diferenciar processos em andamento e concluídos.</p></div>
+        </div>
+      </div>
+
+      <div class="faq__item reveal">
+        <h3>
+          <button class="faq__trigger" type="button" data-faq-trigger aria-expanded="false" aria-controls="faq-6" id="faq-btn-6">
+            O SDI possui aplicativo?
+            <span class="faq__icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+        </h3>
+        <div class="faq__panel" id="faq-6" role="region" aria-labelledby="faq-btn-6">
+          <div><p class="faq__answer">Sim. O SDI possui experiência para dispositivos móveis e também permite acesso à versão web.</p></div>
+        </div>
+      </div>
+
+      <div class="faq__item reveal">
+        <h3>
+          <button class="faq__trigger" type="button" data-faq-trigger aria-expanded="false" aria-controls="faq-7" id="faq-btn-7">
+            Preciso ir presencialmente ao órgão público para consultar o andamento?
+            <span class="faq__icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+          </button>
+        </h3>
+        <div class="faq__panel" id="faq-7" role="region" aria-labelledby="faq-btn-7">
+          <div><p class="faq__answer">O objetivo do SDI é permitir que informações sobre os processos possam ser consultadas remotamente, reduzindo a necessidade de deslocamentos exclusivamente para acompanhamento.</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ==========================================================================
+     FOOTER
+     ========================================================================== -->
+<footer class="footer">
+
+  <div class="deco" aria-hidden="true">
+    <div class="glow glow--navy" style="width:600px;height:400px;top:-200px;left:20%;opacity:.5"></div>
+  </div>
+
+  <div class="shell" style="position:relative;z-index:1">
+
+    <div class="footer__grid">
+
+      <div class="footer__brand">
+        <img src="assets/logos/sdi/sdi-branco.png" alt="SDI — Sistema Digital de Informações" width="420" height="311" loading="lazy" style="height:40px;width:auto">
+        <p>
+          Sistema Digital de Informações.<br>
+          Tecnologia para aproximar cidadãos e gestão pública.
+        </p>
+      </div>
+
+      <nav aria-label="Navegação do rodapé">
+        <p class="footer__title">Navegação</p>
+        <div class="footer__links">
+          <a href="#topo">Início</a>
+          <a href="#o-sdi">O SDI</a>
+          <a href="#funcionalidades">Funcionalidades</a>
+          <a href="#area-do-cidadao">Área do Cidadão</a>
+          <a href="#aplicativo">Aplicativo</a>
+        </div>
+      </nav>
+
+      <nav aria-label="Institucional">
+        <p class="footer__title">Institucional</p>
+        <div class="footer__links">
+          <!-- TODO: confirmar a URL institucional do eGoverna -->
+          <a href="https://www.egoverna.com.br" target="_blank" rel="noopener">eGoverna</a>
+          <a href="politica-de-privacidade.html">Política de Privacidade</a>
+          <a href="termos-de-uso.html">Termos de Uso</a>
+        </div>
+      </nav>
+
+      <nav aria-label="Acesso ao sistema">
+        <p class="footer__title">Acesso</p>
+        <div class="footer__links">
+          <!-- TODO: URL real da Área do Cidadão -->
+          <a href="#">Área do Cidadão</a>
+          <!-- TODO: URL real do SDI web -->
+          <a href="#">SDI Web</a>
+        </div>
+      </nav>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; <span data-year>2026</span> SDI — Sistema Digital de Informações. Todos os direitos reservados.</p>
+      <p class="footer__ecosystem">
+        <span>Uma solução</span>
+        <img src="assets/logos/egoverna/egoverna-branco.png" alt="eGoverna" width="360" height="97" loading="lazy" style="height:20px;width:auto">
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

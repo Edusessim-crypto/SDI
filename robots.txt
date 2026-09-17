@@ -1,0 +1,7 @@
+# SDI — Sistema Digital de Informações
+# TODO: ajustar o domínio abaixo antes de publicar.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.sdi.com.br/sitemap.xml
