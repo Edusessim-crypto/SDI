@@ -58,7 +58,8 @@
     var panel = document.querySelector("[data-menu-panel]");
     if (!toggle || !panel) return;
 
-    var desktop = window.matchMedia("(min-width: 1100px)");
+    /* Mesmo ponto em que o CSS troca o menu mobile pela navegação desktop. */
+    var desktop = window.matchMedia("(min-width: 1200px)");
 
     function setOpen(open) {
       toggle.setAttribute("aria-expanded", String(open));

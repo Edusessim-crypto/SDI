@@ -46,10 +46,6 @@
   /* — Amarelo: detalhe pontual da identidade — */
   --color-yellow: #ffc107;
 
-  /* — Verde: usado só na faixa de sustentabilidade — */
-  --color-green: #1e8e4e;
-  --color-green-50: #edf8f1;
-
   /* — Neutros — */
   --color-white: #ffffff;
   --color-bg: #f7f9fc;
@@ -102,7 +98,7 @@
 html {
   scroll-behavior: smooth;
   /* compensa o header fixo ao navegar por âncoras */
-  scroll-padding-top: 104px;
+  scroll-padding-top: 124px;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
 }
@@ -468,34 +464,6 @@ p {
   gap: 14px;
 }
 
-/* — Link com seta (CTA discreto) — */
-.link-arrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 700;
-  font-size: 0.9375rem;
-  color: var(--color-blue-600);
-  padding-bottom: 2px;
-  background-image: linear-gradient(currentColor, currentColor);
-  background-size: 0% 1.5px;
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  transition: background-size var(--transition);
-}
-
-.link-arrow:hover {
-  background-size: 100% 1.5px;
-}
-
-.link-arrow svg {
-  transition: transform var(--transition);
-}
-
-.link-arrow:hover svg {
-  transform: translateX(3px);
-}
-
 /* — Cards — */
 .card {
   position: relative;
@@ -730,9 +698,6 @@ p {
   }
 }
 
-
-
-
 /* ==========================================================================
    07. MOCKUPS
    Molduras construídas em CSS. As screenshots reais entram dentro delas.
@@ -741,10 +706,19 @@ p {
 /* — Moldura de smartphone — */
 .device {
   position: relative;
-  width: 100%;
-  max-width: 300px;
-  aspect-ratio: 300 / 620;
-  padding: 11px;
+  /* A moldura acompanha a proporção da screenshot que recebe: assim a tela
+     preenche tudo, sem faixas brancas (contain) nem corte lateral (cover).
+     --screen-ratio é altura/largura DA IMAGEM; a conta abaixo soma as bordas
+     da moldura (padding), que não fazem parte da tela. */
+  --frame-w: 300px;
+  --frame-pad: 11px;
+  width: var(--frame-w);
+  max-width: 100%;
+  height: calc(
+    (var(--frame-w) - 2 * var(--frame-pad)) * var(--screen-ratio, 2.067)
+    + 2 * var(--frame-pad)
+  );
+  padding: var(--frame-pad);
   border-radius: 46px;
   background: linear-gradient(160deg, #1b2b45, #0a1526 55%, #16233a);
   box-shadow: var(--shadow-device), inset 0 0 0 1px rgb(255 255 255 / 0.12);
@@ -762,11 +736,9 @@ p {
 .device__screen img {
   width: 100%;
   height: 100%;
-  /* contain preserva a screenshot inteira: as capturas reais têm proporção
-     um pouco mais larga que a moldura, e cover cortaria as laterais. */
-  object-fit: contain;
+  /* Com a moldura na mesma proporção da imagem, cover não corta nada. */
+  object-fit: cover;
   object-position: center;
-  background: var(--color-white);
 }
 
 /* Recorte da câmera */
@@ -847,28 +819,69 @@ p {
   }
 }
 
-/* — Painel do sistema no hero: imagem larga com profundidade — */
+/* — Painel do sistema no hero — */
+.hero-stage--panel {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: auto;
+  /* espaço para os selos que avançam sobre as bordas do painel */
+  padding: 26px 0;
+}
+
 .hero-panel {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   margin: 0;
   width: 100%;
-  max-width: 560px;
+  /* o painel nunca passa da coluna: sem estouro no desktop largo */
+  max-width: 520px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--color-white);
-  box-shadow: var(--shadow-lg), 0 0 0 1px rgb(0 35 85 / 0.06);
+  box-shadow: var(--shadow-lg), 0 0 0 1px rgb(0 35 85 / 0.07);
 }
 
 .hero-panel img {
+  display: block;
   width: 100%;
   height: auto;
 }
 
-/* O palco fica mais largo quando o protagonista é um painel, não um aparelho */
-.hero-stage--wide {
-  min-height: auto;
-  padding-block: 20px;
+/* Selos ancorados às bordas do painel, não a posições soltas do palco */
+.float-card--top {
+  top: 6%;
+  left: -6%;
+}
+
+.float-card--bottom {
+  bottom: 8%;
+  right: -5%;
+}
+
+@media (max-width: 1023px) {
+  /* no tablet/celular os selos entram para dentro da área visível */
+  .float-card--top {
+    left: 0;
+  }
+
+  .float-card--bottom {
+    right: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-stage--panel {
+    padding: 18px 0;
+  }
+
+  .float-card--top {
+    top: 2%;
+  }
+
+  .float-card--bottom {
+    bottom: 2%;
+  }
 }
 
 /* — Composição do hero: aparelho + cartões flutuantes — */
@@ -877,23 +890,6 @@ p {
   display: grid;
   place-items: center;
   min-height: 560px;
-}
-
-/* Aparelho secundário, parcialmente atrás do principal */
-.hero-stage__back {
-  position: absolute;
-  top: 46px;
-  right: 2%;
-  width: 208px;
-  opacity: 0.92;
-  transform: rotate(6deg);
-  filter: blur(0.4px);
-  z-index: 1;
-}
-
-.hero-stage__front {
-  position: relative;
-  z-index: 2;
 }
 
 /* Cartões de informação que flutuam ao redor */
@@ -925,21 +921,6 @@ p {
   font-size: 0.6875rem;
   font-weight: 600;
   color: var(--color-text-muted);
-}
-
-.float-card--a {
-  top: 8%;
-  left: -2%;
-}
-
-.float-card--b {
-  top: 40%;
-  right: -4%;
-}
-
-.float-card--c {
-  bottom: 12%;
-  left: 2%;
 }
 
 /* Flutuação muito discreta */
@@ -992,7 +973,7 @@ p {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  height: 80px;
+  height: 100px;
 }
 
 .header__logo {
@@ -1097,7 +1078,7 @@ p {
   z-index: 99;
   display: flex;
   flex-direction: column;
-  padding-top: 80px;
+  padding-top: 100px;
   background: var(--color-white);
   visibility: hidden;
   opacity: 0;
@@ -1165,7 +1146,7 @@ p {
 /* — 7. Hero — */
 .hero {
   position: relative;
-  padding-top: 140px;
+  padding-top: 160px;
   padding-bottom: clamp(64px, 8vw, 104px);
   background: linear-gradient(180deg, var(--color-white) 0%, var(--color-bg) 100%);
   overflow: hidden;
@@ -1229,146 +1210,6 @@ p {
   font-size: 0.9688rem;
   line-height: 1.65;
   color: var(--color-text-muted);
-}
-
-/* — 10. Destaques com linha de conexão apontando para a interface — */
-.feature-note {
-  display: grid;
-  gap: 8px;
-  padding: 22px 24px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border-soft);
-  background: var(--color-white);
-  box-shadow: var(--shadow-sm);
-}
-
-.feature-note__label {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  font-size: 0.6875rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-primary);
-}
-
-.feature-note__label::before {
-  content: "";
-  width: 18px;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--color-blue);
-  flex: none;
-}
-
-.feature-note__text {
-  font-size: 0.9375rem;
-  line-height: 1.6;
-  color: var(--color-text-muted);
-}
-
-/* — 13. Cards de perfil (CPF / CNPJ) — */
-.profile-card {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 22px 24px;
-  border: 1px solid var(--color-border-soft);
-  border-radius: var(--radius-lg);
-  background: var(--color-white);
-  transition: border-color var(--transition), box-shadow var(--transition),
-    transform var(--transition);
-}
-
-.profile-card:hover {
-  border-color: var(--color-blue-light);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
-}
-
-.profile-card__icon {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  flex: none;
-  border-radius: 14px;
-  background: var(--color-blue-50);
-  color: var(--color-primary);
-}
-
-.profile-card__kind {
-  font-size: 0.9375rem;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-}
-
-.profile-card__doc {
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--color-blue-600);
-}
-
-/* — Painel "trocar perfil" desenhado em CSS (representação da interface) — */
-.switch-panel {
-  display: grid;
-  gap: 10px;
-  padding: 20px;
-  border-radius: var(--radius-lg);
-  background: var(--color-white);
-  border: 1px solid var(--color-border-soft);
-  box-shadow: var(--shadow-lg);
-}
-
-.switch-panel__head {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--color-border-soft);
-  font-size: 0.8125rem;
-  font-weight: 800;
-  color: var(--color-primary);
-}
-
-.switch-option {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 13px 14px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border-soft);
-  font-size: 0.875rem;
-  font-weight: 700;
-}
-
-.switch-option--active {
-  border-color: var(--color-blue);
-  background: var(--color-blue-50);
-  color: var(--color-primary);
-}
-
-.switch-option__dot {
-  width: 16px;
-  height: 16px;
-  flex: none;
-  border-radius: 50%;
-  border: 2px solid var(--color-border);
-}
-
-.switch-option--active .switch-option__dot {
-  border-color: var(--color-blue);
-  border-width: 5px;
-}
-
-.switch-option span {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--color-text-muted);
-  letter-spacing: 0.04em;
 }
 
 /* — 14. Menu do aplicativo representado em CSS — */
@@ -1515,80 +1356,6 @@ p {
   }
 }
 
-/* — 16. Diagrama de conexão cidadão → app → gestão pública — */
-.connect {
-  display: grid;
-  gap: 18px;
-  align-items: center;
-  justify-items: center;
-  text-align: center;
-}
-
-@media (min-width: 720px) {
-  .connect {
-    grid-template-columns: 1fr auto 1fr auto 1fr;
-    gap: 12px;
-  }
-}
-
-.connect__node {
-  display: grid;
-  gap: 12px;
-  justify-items: center;
-  padding: 26px 20px;
-  width: 100%;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border-soft);
-  background: var(--color-white);
-  box-shadow: var(--shadow-sm);
-}
-
-.connect__node--center {
-  border-color: var(--color-blue-light);
-  background: linear-gradient(170deg, var(--color-white), var(--color-blue-50));
-}
-
-.connect__icon {
-  display: grid;
-  place-items: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 18px;
-  background: var(--color-blue-50);
-  color: var(--color-primary);
-}
-
-.connect__node--center .connect__icon {
-  background: var(--color-primary);
-  color: #fff;
-}
-
-.connect__name {
-  font-size: 0.9688rem;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-}
-
-.connect__desc {
-  font-size: 0.8125rem;
-  color: var(--color-text-muted);
-  line-height: 1.5;
-}
-
-/* Traço pontilhado entre os nós */
-.connect__link {
-  display: grid;
-  place-items: center;
-  color: var(--color-blue);
-  opacity: 0.6;
-}
-
-@media (max-width: 719px) {
-  .connect__link {
-    transform: rotate(90deg);
-  }
-}
-
 /* — 18. Faixa 100% digital — */
 .digital {
   display: grid;
@@ -1643,29 +1410,6 @@ p {
 .digital__item svg {
   flex: none;
   color: var(--color-blue-400);
-}
-
-/* — 19. Sustentabilidade (único ponto com verde, bem contido) — */
-.section--green {
-  background: linear-gradient(180deg, var(--color-white), var(--color-green-50));
-}
-
-.section--green .eyebrow {
-  color: var(--color-green);
-}
-
-.section--green .eyebrow::before {
-  background: var(--color-green);
-}
-
-.leaf-badge {
-  display: grid;
-  place-items: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 20px;
-  background: rgb(30 142 78 / 0.1);
-  color: var(--color-green);
 }
 
 /* — 20. Ecossistema eGoverna — */
@@ -1917,7 +1661,7 @@ p {
 
 .page-head {
   position: relative;
-  padding-top: 148px;
+  padding-top: 168px;
   padding-bottom: clamp(40px, 5vw, 56px);
   background: linear-gradient(180deg, var(--color-white), var(--color-bg));
   overflow: hidden;
@@ -2055,7 +1799,7 @@ p {
 /* — Hero em duas colunas a partir do desktop — */
 @media (min-width: 1024px) {
   .hero {
-    padding-top: 172px;
+    padding-top: 192px;
   }
 
   .hero__grid {
@@ -2064,9 +1808,9 @@ p {
 }
 
 /* — Navegação desktop — */
-@media (min-width: 1100px) {
+@media (min-width: 1200px) {
   .header__inner {
-    height: 88px;
+    height: 108px;
   }
 
   .header__nav {
@@ -2089,31 +1833,10 @@ p {
 
 /* — Ajustes finos para telas pequenas — */
 @media (max-width: 767px) {
-  .hero-stage {
-    min-height: 520px;
-  }
-
-  /* os cartões flutuantes se aproximam para não vazar da tela */
+  /* os selos encolhem para não competir com o painel */
   .float-card {
     padding: 10px 13px;
     font-size: 0.75rem;
-  }
-
-  .float-card--a {
-    left: 0;
-  }
-
-  .float-card--b {
-    right: 0;
-  }
-
-  .float-card--c {
-    left: 0;
-  }
-
-  .hero-stage__back {
-    right: 0;
-    width: 170px;
   }
 
   .footer__bottom {
@@ -2122,22 +1845,16 @@ p {
   }
 }
 
-/* Entre 401px e 767px o aparelho cede largura para os cartões laterais
-   caberem ao lado dele sem cobrir a tela. */
+/* O aparelho cede largura em telas estreitas */
 @media (min-width: 401px) and (max-width: 767px) {
   .device {
-    max-width: 272px;
+    --frame-w: 272px;
   }
 }
 
 @media (max-width: 400px) {
-  /* no iPhone SE/mini os cartões laterais competem com o aparelho */
-  .float-card--b {
-    display: none;
-  }
-
   .device {
-    max-width: 258px;
+    --frame-w: 258px;
   }
 }
 
