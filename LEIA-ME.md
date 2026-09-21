@@ -10,48 +10,28 @@ Para testar localmente, abra `index.html` direto no navegador.
 
 ## Pendências antes de publicar
 
-### 1. Screenshots reais do aplicativo
+### 1. Imagens
 
-Os mockups do painel interno, do login Gov.br e do notebook já foram extraídos
-das peças institucionais e estão em `assets/images/app/`.
+Todos os containers de imagem já usam arquivos reais, em `assets/images/app/`:
 
-Falta **1 container**, aguardando a tela real do menu do aplicativo. Está marcado
-no HTML com:
-
-```html
-<!-- Inserir screenshot real do SDI aqui — tela "..." -->
-```
-
-Para localizá-los:
-
-```bash
-grep -n "Inserir screenshot real" index.html
-```
-
-Coloque os arquivos em `assets/images/app/` e substitua o bloco
-`<div class="shot-placeholder">…</div>` por:
-
-```html
-<img src="assets/images/app/nome-da-tela.webp"
-     alt="Descrição da tela"
-     width="300" height="620" loading="lazy">
-```
-
-| Tela | Situação |
+| Tela | Onde aparece |
 |---|---|
-| Escolha a instituição | ✅ no hero (screenshot real) |
-| Login Gov.br | ✅ na Área do Cidadão (screenshot real) |
-| Painel interno | ✅ na Gestão Pública e no CTA final |
-| Menu do aplicativo | ⏳ desenhado em CSS (`.app-menu`) — trocar pela screenshot |
+| Escolha a instituição | hero e dobra do aplicativo |
+| Login Gov.br | dobra "Acesso Gov.br" |
+| Painel interno | Gestão Pública e CTA final |
+| ISA | dobra da ISA |
+| Selo do ecossistema | dobra do Workflow |
 
 ### 2. URLs de acesso ao sistema
 
-Os botões "Acessar SDI" e "Área do Cidadão" apontam para `#`. São
-**12 ocorrências**, todas marcadas com `<!-- TODO: URL real ... -->`:
+O botão "Acessar o SDI" aponta para `#`. São **9 ocorrências**, todas
+marcadas com `<!-- TODO: URL real ... -->`:
 
 ```bash
 grep -rn "TODO.*URL" *.html
 ```
+
+Os links das lojas (App Store e Google Play) já são definitivos.
 
 ### 3. Domínio
 
@@ -81,7 +61,10 @@ controlador (razão social, CNPJ, endereço e contato do encarregado/DPO).
 ## Estrutura
 
 ```
-index.html                  Página principal (10 seções)
+index.html                  Página principal (10 seções):
+                            hero · posicionamento · gestão pública ·
+                            acesso Gov.br · aplicativo · benefícios +
+                            comparativo · ISA · workflow · CTA · manifesto
 politica-de-privacidade.html
 termos-de-uso.html
 404.html
@@ -107,12 +90,6 @@ Duas distinções importantes na paleta:
 - `--color-blue` (`#0878f9`) — decorativo: ícones, glows, bordas. **Não usar em texto.**
 - `--color-blue-600` (`#0563d6`) — sempre que o azul precisar carregar texto (5.58:1 sobre branco, WCAG AA).
 
-### Ocultar a seção "100% Digital"
-
-A menção a assinatura eletrônica vem de material institucional anterior. Para
-ocultar a seção, basta comentar ou remover a `<section class="section section--dark">`
-que contém `class="digital"` em `index.html`.
-
 ---
 
 ## Verificações já feitas
@@ -121,7 +98,7 @@ que contém `class="digital"` em `index.html`.
 - Todos os links internos e âncoras resolvem; nenhum arquivo referenciado faltando
 - Contraste WCAG AA em todas as combinações de texto (nenhuma reprovação)
 - Todas as imagens com `alt`, `width` e `height`; 5 com `loading="lazy"`
-- FAQ com `aria-expanded`, `aria-controls`, `role="region"` e navegação por teclado
+- Tabela comparativa com `<caption>`, `scope` nos cabeçalhos e rolagem própria no mobile
 - `prefers-reduced-motion` respeitado; o conteúdo aparece normalmente sem JavaScript
 - Sem overflow horizontal de 320px a 1920px
 - Zero dependências de framework, zero scripts externos

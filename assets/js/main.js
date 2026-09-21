@@ -6,8 +6,7 @@
  *   1. Header ao rolar
  *   2. Menu mobile
  *   3. Reveal on scroll (IntersectionObserver)
- *   4. Accordion do FAQ
- *   5. Ano corrente no rodapé
+ *   4. Ano corrente no rodapé
  */
 (function () {
   "use strict";
@@ -133,34 +132,7 @@
   }
 
   /* ======================================================================
-     4. ACCORDION DO FAQ
-     Um item aberto por vez. A altura é animada pelo CSS (grid-template-rows).
-     ====================================================================== */
-
-  function initFaq() {
-    var triggers = document.querySelectorAll("[data-faq-trigger]");
-    if (!triggers.length) return;
-
-    triggers.forEach(function (trigger) {
-      trigger.addEventListener("click", function () {
-        var item = trigger.closest(".faq__item");
-        var isOpen = trigger.getAttribute("aria-expanded") === "true";
-
-        /* Fecha os demais para manter a lista compacta. */
-        triggers.forEach(function (other) {
-          if (other === trigger) return;
-          other.setAttribute("aria-expanded", "false");
-          other.closest(".faq__item").classList.remove("is-open");
-        });
-
-        trigger.setAttribute("aria-expanded", String(!isOpen));
-        item.classList.toggle("is-open", !isOpen);
-      });
-    });
-  }
-
-  /* ======================================================================
-     5. ANO CORRENTE NO RODAPÉ
+     4. ANO CORRENTE NO RODAPÉ
      ====================================================================== */
 
   function initYear() {
@@ -175,7 +147,6 @@
     initHeader();
     initMobileMenu();
     initReveal();
-    initFaq();
     initYear();
   }
 
