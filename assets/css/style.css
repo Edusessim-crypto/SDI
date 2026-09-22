@@ -586,9 +586,12 @@ p {
 }
 
 /* — Pílulas de indicadores (hero) — */
+/* Quatro itens em linha livre quebravam como 3+1, deixando o último
+   solto; em duas colunas eles formam um bloco 2x2. */
 .pill-row {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: start;
   gap: 10px;
 }
 
@@ -1596,6 +1599,9 @@ p {
 
 /* A anáfora do texto ("Precisa de…") é o ritmo do bloco: cada linha entra
    como um item próprio, em coluna centrada. */
+/* As quatro pílulas compartilham a largura da maior ("sustentabilidade"):
+   com a largura livre cada uma se ajustava ao próprio texto e a coluna
+   ficava serrilhada. */
 .manifesto__list {
   display: grid;
   gap: 12px;
@@ -1604,10 +1610,14 @@ p {
 }
 
 .manifesto__item {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 14px;
+  width: min(100%, 30ch);
   padding: 13px 28px;
+  /* A linha mais longa ("sustentabilidade") não pode quebrar: com duas
+     linhas a pílula cresce em altura e o ritmo da lista se perde. */
+  white-space: nowrap;
   border-radius: var(--radius-full);
   border: 1px solid rgb(255 255 255 / 0.14);
   background: rgb(255 255 255 / 0.06);
