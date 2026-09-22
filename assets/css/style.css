@@ -1629,23 +1629,19 @@ p {
 /* Assinatura final: o nome do produto fecha o manifesto. */
 .manifesto__closing {
   display: grid;
-  gap: 6px;
+  justify-items: center;
+  gap: 14px;
   font-size: clamp(1.25rem, 3vw, 1.75rem);
   font-weight: 700;
   color: rgb(255 255 255 / 0.82);
 }
 
-.manifesto__closing strong {
-  font-weight: 800;
-  color: var(--color-yellow);
-}
-
-.manifesto__closing span {
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgb(255 255 255 / 0.55);
+/* A logo fecha a frase: ela já traz o nome por extenso, então substitui
+   tanto o "SDI" quanto a linha de apoio que havia aqui. */
+.manifesto__closing img {
+  height: clamp(58px, 7vw, 84px);
+  width: auto;
+  margin-top: 4px;
 }
 
 /* — 21. CTA final — */
